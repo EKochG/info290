@@ -55,12 +55,13 @@ public boolean isSingleton() {
 		return pcBA;
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
-public static RemoteObject _edittext1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
-public static RemoteObject _edittext2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static RemoteObject _imageview1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
-public static RemoteObject _label3 = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
+public static RemoteObject _imageview2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _imageview3 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _button1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
+public static RemoteObject _num = RemoteObject.createImmutable(0);
 public static b4a.example.starter _starter = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"EditText1",main.mostCurrent._edittext1,"EditText2",main.mostCurrent._edittext2,"ImageView1",main.mostCurrent._imageview1,"Label3",main.mostCurrent._label3,"Starter",Debug.moduleToString(b4a.example.starter.class)};
+		return new Object[] {"Activity",main.mostCurrent._activity,"Button1",main.mostCurrent._button1,"ImageView1",main.mostCurrent._imageview1,"ImageView2",main.mostCurrent._imageview2,"ImageView3",main.mostCurrent._imageview3,"num",main._num,"Starter",Debug.moduleToString(b4a.example.starter.class)};
 }
 }

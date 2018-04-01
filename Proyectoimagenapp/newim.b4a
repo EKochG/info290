@@ -4,8 +4,11 @@ Module1=Starter
 Build1=Default,b4a.example
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
 IconFile=
-NumberOfFiles=1
+NumberOfFiles=4
 File1=pantalla1.bal
+File2=r1.jpg
+File3=r2.png
+File4=r3.jpg
 NumberOfLibraries=1
 Library1=core
 @EndOfDesignText@
@@ -32,16 +35,23 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
-
-	Private EditText1 As EditText
-	Private EditText2 As EditText
 	Private ImageView1 As ImageView
-	Private Label3 As Label
+	Private ImageView2 As ImageView
+	Private ImageView3 As ImageView
+
+	Private Button1 As Button
+	Dim num As Int=0
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("pantalla1")
+	ImageView1.Visible=True
+	ImageView2.Visible=False
+	ImageView3.Visible=False
+	ImageView1.Bitmap =LoadBitmap(File.DirAssets,"r1.jpg")
+	ImageView2.Bitmap =LoadBitmap(File.DirAssets,"r2.png")
+	ImageView3.Bitmap =LoadBitmap(File.DirAssets,"r3.jpg")
 
 End Sub
 
@@ -55,14 +65,17 @@ End Sub
 
 
 Sub Button1_Click
-	Dim intvalue1 As Float
-	Dim intvalue2 As Float
-	intvalue1=EditText1.Text
-	intvalue2=EditText2.Text
-	Try
-		Msgbox(intvalue1/(intvalue2*intvalue2),"El indice de masa Corporal es:")
-	Catch
-		Msgbox("No se han ingresado numeros validos","¡Error!")
-	End Try
-	
+	If num=0 Then
+		ImageView1.Visible=False
+		ImageView2.Visible=True
+		num=num+1
+	Else If num=1 Then
+		ImageView2.Visible=False
+		ImageView3.Visible=True
+		num=num+1
+	Else
+		ImageView3.Visible=False
+		ImageView1.Visible=True
+		num=0
+	End If
 End Sub

@@ -342,10 +342,11 @@ public static void killProgram() {
 BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _edittext1 = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _edittext2 = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imageview1 = null;
-public anywheresoftware.b4a.objects.LabelWrapper _label3 = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imageview2 = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imageview3 = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _button1 = null;
+public static int _num = 0;
 public b4a.example.starter _starter = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
@@ -356,8 +357,26 @@ RDebugUtils.currentLine=131072;
 RDebugUtils.currentLine=131074;
  //BA.debugLineNum = 131074;BA.debugLine="Activity.LoadLayout(\"pantalla1\")";
 mostCurrent._activity.LoadLayout("pantalla1",mostCurrent.activityBA);
+RDebugUtils.currentLine=131075;
+ //BA.debugLineNum = 131075;BA.debugLine="ImageView1.Visible=True";
+mostCurrent._imageview1.setVisible(anywheresoftware.b4a.keywords.Common.True);
 RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131076;BA.debugLine="ImageView2.Visible=False";
+mostCurrent._imageview2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=131077;
+ //BA.debugLineNum = 131077;BA.debugLine="ImageView3.Visible=False";
+mostCurrent._imageview3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=131078;
+ //BA.debugLineNum = 131078;BA.debugLine="ImageView1.Bitmap =LoadBitmap(File.DirAssets,\"r1.";
+mostCurrent._imageview1.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"r1.jpg").getObject()));
+RDebugUtils.currentLine=131079;
+ //BA.debugLineNum = 131079;BA.debugLine="ImageView2.Bitmap =LoadBitmap(File.DirAssets,\"r2.";
+mostCurrent._imageview2.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"r2.png").getObject()));
+RDebugUtils.currentLine=131080;
+ //BA.debugLineNum = 131080;BA.debugLine="ImageView3.Bitmap =LoadBitmap(File.DirAssets,\"r3.";
+mostCurrent._imageview3.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"r3.jpg").getObject()));
+RDebugUtils.currentLine=131082;
+ //BA.debugLineNum = 131082;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -384,35 +403,46 @@ public static String  _button1_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "button1_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "button1_click", null);
-float _intvalue1 = 0f;
-float _intvalue2 = 0f;
 RDebugUtils.currentLine=327680;
  //BA.debugLineNum = 327680;BA.debugLine="Sub Button1_Click";
 RDebugUtils.currentLine=327681;
- //BA.debugLineNum = 327681;BA.debugLine="Dim intvalue1 As Float";
-_intvalue1 = 0f;
+ //BA.debugLineNum = 327681;BA.debugLine="If num=0 Then";
+if (_num==0) { 
 RDebugUtils.currentLine=327682;
- //BA.debugLineNum = 327682;BA.debugLine="Dim intvalue2 As Float";
-_intvalue2 = 0f;
+ //BA.debugLineNum = 327682;BA.debugLine="ImageView1.Visible=False";
+mostCurrent._imageview1.setVisible(anywheresoftware.b4a.keywords.Common.False);
 RDebugUtils.currentLine=327683;
- //BA.debugLineNum = 327683;BA.debugLine="intvalue1=EditText1.Text";
-_intvalue1 = (float)(Double.parseDouble(mostCurrent._edittext1.getText()));
+ //BA.debugLineNum = 327683;BA.debugLine="ImageView2.Visible=True";
+mostCurrent._imageview2.setVisible(anywheresoftware.b4a.keywords.Common.True);
 RDebugUtils.currentLine=327684;
- //BA.debugLineNum = 327684;BA.debugLine="intvalue2=EditText2.Text";
-_intvalue2 = (float)(Double.parseDouble(mostCurrent._edittext2.getText()));
-RDebugUtils.currentLine=327685;
- //BA.debugLineNum = 327685;BA.debugLine="Try";
-try {RDebugUtils.currentLine=327686;
- //BA.debugLineNum = 327686;BA.debugLine="Msgbox(intvalue1/(intvalue2*intvalue2),\"El indic";
-anywheresoftware.b4a.keywords.Common.Msgbox(BA.NumberToString(_intvalue1/(double)(_intvalue2*_intvalue2)),"El indice de masa Corporal es:",mostCurrent.activityBA);
- } 
-       catch (Exception e8) {
-			processBA.setLastException(e8);RDebugUtils.currentLine=327688;
- //BA.debugLineNum = 327688;BA.debugLine="Msgbox(\"No se han ingresado numeros validos\",\"¡E";
-anywheresoftware.b4a.keywords.Common.Msgbox("No se han ingresado numeros validos","¡Error!",mostCurrent.activityBA);
- };
+ //BA.debugLineNum = 327684;BA.debugLine="num=num+1";
+_num = (int) (_num+1);
+ }else 
+{RDebugUtils.currentLine=327685;
+ //BA.debugLineNum = 327685;BA.debugLine="Else If num=1 Then";
+if (_num==1) { 
+RDebugUtils.currentLine=327686;
+ //BA.debugLineNum = 327686;BA.debugLine="ImageView2.Visible=False";
+mostCurrent._imageview2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=327687;
+ //BA.debugLineNum = 327687;BA.debugLine="ImageView3.Visible=True";
+mostCurrent._imageview3.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=327688;
+ //BA.debugLineNum = 327688;BA.debugLine="num=num+1";
+_num = (int) (_num+1);
+ }else {
+RDebugUtils.currentLine=327690;
+ //BA.debugLineNum = 327690;BA.debugLine="ImageView3.Visible=False";
+mostCurrent._imageview3.setVisible(anywheresoftware.b4a.keywords.Common.False);
 RDebugUtils.currentLine=327691;
- //BA.debugLineNum = 327691;BA.debugLine="End Sub";
+ //BA.debugLineNum = 327691;BA.debugLine="ImageView1.Visible=True";
+mostCurrent._imageview1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=327692;
+ //BA.debugLineNum = 327692;BA.debugLine="num=0";
+_num = (int) (0);
+ }};
+RDebugUtils.currentLine=327694;
+ //BA.debugLineNum = 327694;BA.debugLine="End Sub";
 return "";
 }
 }
