@@ -58,10 +58,17 @@ public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.
 public static RemoteObject _imageview1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
 public static RemoteObject _imageview2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
 public static RemoteObject _imageview3 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _element = RemoteObject.createImmutable(0);
 public static RemoteObject _button1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 public static RemoteObject _num = RemoteObject.createImmutable(0);
+public static RemoteObject _imageview4 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _imageview5 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _imageview6 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _imageview7 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _imageview8 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
+public static RemoteObject _imageview9 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
 public static b4a.example.starter _starter = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"Button1",main.mostCurrent._button1,"ImageView1",main.mostCurrent._imageview1,"ImageView2",main.mostCurrent._imageview2,"ImageView3",main.mostCurrent._imageview3,"num",main._num,"Starter",Debug.moduleToString(b4a.example.starter.class)};
+		return new Object[] {"Activity",main.mostCurrent._activity,"Button1",main.mostCurrent._button1,"element",main._element,"ImageView1",main.mostCurrent._imageview1,"ImageView2",main.mostCurrent._imageview2,"ImageView3",main.mostCurrent._imageview3,"ImageView4",main.mostCurrent._imageview4,"ImageView5",main.mostCurrent._imageview5,"ImageView6",main.mostCurrent._imageview6,"ImageView7",main.mostCurrent._imageview7,"ImageView8",main.mostCurrent._imageview8,"ImageView9",main.mostCurrent._imageview9,"num",main._num,"Starter",Debug.moduleToString(b4a.example.starter.class)};
 }
 }

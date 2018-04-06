@@ -38,9 +38,16 @@ Sub Globals
 	Private ImageView1 As ImageView
 	Private ImageView2 As ImageView
 	Private ImageView3 As ImageView
-
+	Dim element As Int=0
 	Private Button1 As Button
 	Dim num As Int=0
+
+	Private ImageView4 As ImageView
+	Private ImageView5 As ImageView
+	Private ImageView6 As ImageView
+	Private ImageView7 As ImageView
+	Private ImageView8 As ImageView
+	Private ImageView9 As ImageView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -49,9 +56,21 @@ Sub Activity_Create(FirstTime As Boolean)
 	ImageView1.Visible=True
 	ImageView2.Visible=False
 	ImageView3.Visible=False
+	ImageView4.Visible=False
+	ImageView5.Visible=False
+	ImageView6.Visible=False
+	ImageView7.Visible=False
+	ImageView8.Visible=False
+	ImageView9.Visible=False
 	ImageView1.Bitmap =LoadBitmap(File.DirAssets,"r1.jpg")
 	ImageView2.Bitmap =LoadBitmap(File.DirAssets,"r2.png")
 	ImageView3.Bitmap =LoadBitmap(File.DirAssets,"r3.jpg")
+	ImageView4.Bitmap =LoadBitmap(File.DirAssets,"r1.jpg")
+	ImageView5.Bitmap =LoadBitmap(File.DirAssets,"r2.png")
+	ImageView6.Bitmap =LoadBitmap(File.DirAssets,"r3.jpg")
+	ImageView7.Bitmap =LoadBitmap(File.DirAssets,"r1.jpg")
+	ImageView8.Bitmap =LoadBitmap(File.DirAssets,"r2.png")
+	ImageView9.Bitmap =LoadBitmap(File.DirAssets,"r3.jpg")
 
 End Sub
 
@@ -65,17 +84,141 @@ End Sub
 
 
 Sub Button1_Click
-	If num=0 Then
-		ImageView1.Visible=False
-		ImageView2.Visible=True
-		num=num+1
-	Else If num=1 Then
-		ImageView2.Visible=False
-		ImageView3.Visible=True
-		num=num+1
+	ImageView9.Visible=False
+	ImageView8.Visible=False
+	ImageView7.Visible=False
+	ImageView6.Visible=False
+	ImageView5.Visible=False
+	ImageView4.Visible=False
+	ImageView3.Visible=False
+	ImageView2.Visible=False
+	ImageView1.Visible=False
+	
+	If element=0 Then
+		If num=0 Then
+			ImageView1.Visible=True
+			ImageView2.Visible=False
+			ImageView3.Visible=False
+			num=num+1
+			
+		Else If num=1 Then
+			ImageView1.Visible=False
+			ImageView2.Visible=True
+			ImageView3.Visible=False
+			num=num+1
+		Else
+			ImageView1.Visible=False
+			ImageView2.Visible=False
+			ImageView3.Visible=True
+			num=0
+		End If
+	Else If element=1 Then
+		If num=0 Then
+			ImageView4.Visible=True
+			ImageView5.Visible=False
+			ImageView6.Visible=False
+			num=num+1
+			
+		Else If num=1 Then
+			ImageView4.Visible=False
+			ImageView5.Visible=True
+			ImageView6.Visible=False
+			num=num+1
+		Else
+			ImageView4.Visible=False
+			ImageView5.Visible=False
+			ImageView6.Visible=True
+			num=0
+		End If
 	Else
-		ImageView3.Visible=False
-		ImageView1.Visible=True
-		num=0
+		If num=0 Then
+			ImageView7.Visible=True
+			ImageView8.Visible=False
+			ImageView9.Visible=False
+			num=num+1
+			
+		Else If num=1 Then
+			ImageView7.Visible=False
+			ImageView8.Visible=True
+			ImageView9.Visible=False
+			num=num+1
+		Else
+			ImageView7.Visible=False
+			ImageView8.Visible=False
+			ImageView9.Visible=True
+			num=0
+		End If
+	End If
+End Sub
+
+Sub Button2_Click
+	element=element+1
+	If element>2 Then
+		element=0
+	End If
+	ImageView9.Visible=False
+	ImageView8.Visible=False
+	ImageView7.Visible=False
+	ImageView6.Visible=False
+	ImageView5.Visible=False
+	ImageView4.Visible=False
+	ImageView3.Visible=False
+	ImageView2.Visible=False
+	ImageView1.Visible=False
+	
+	If element=0 Then
+		If num=0 Then
+			ImageView1.Visible=True
+			ImageView2.Visible=False
+			ImageView3.Visible=False
+			num=num+1
+			
+		Else If num=1 Then
+			ImageView1.Visible=False
+			ImageView2.Visible=True
+			ImageView3.Visible=False
+			num=num+1
+		Else
+			ImageView1.Visible=False
+			ImageView2.Visible=False
+			ImageView3.Visible=True
+			num=0
+		End If
+	Else If element=1 Then
+		If num=0 Then
+			ImageView4.Visible=True
+			ImageView5.Visible=False
+			ImageView6.Visible=False
+			num=num+1
+			
+		Else If num=1 Then
+			ImageView4.Visible=False
+			ImageView5.Visible=True
+			ImageView6.Visible=False
+			num=num+1
+		Else
+			ImageView4.Visible=False
+			ImageView5.Visible=False
+			ImageView6.Visible=True
+			num=0
+		End If
+	Else
+		If num=0 Then
+			ImageView7.Visible=True
+			ImageView8.Visible=False
+			ImageView9.Visible=False
+			num=num+1
+			
+		Else If num=1 Then
+			ImageView7.Visible=False
+			ImageView8.Visible=True
+			ImageView9.Visible=False
+			num=num+1
+		Else
+			ImageView7.Visible=False
+			ImageView8.Visible=False
+			ImageView9.Visible=True
+			num=0
+		End If
 	End If
 End Sub

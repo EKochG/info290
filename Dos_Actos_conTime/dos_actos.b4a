@@ -1,0 +1,119 @@
+﻿Version=5.8
+NumberOfModules=1
+Module1=Main2
+Build1=Default,b4a.example
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@android:style/Theme.Holo")~\n~'End of default text.~\n~
+IconFile=
+NumberOfFiles=8
+File1=auto.jpg
+File2=autos.png
+File3=panta1.bal
+File4=panta2.bal
+File5=pendon1.jpg
+File6=resultados.bal
+File7=samsung-froyo-1748x984.jpg
+File8=white.jpeg
+NumberOfLibraries=1
+Library1=core
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel:DosActivity
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+
+Sub Process_Globals
+	Type auto(Patente As String,hllegada As Int,mllegada As Int,fechallegada As String)
+	
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	Dim cont As Int=0
+	Dim car(20) As auto
+	Private EditText1 As EditText
+	Private EditText2 As EditText
+	Private EditText3 As EditText
+	Private EditText4 As EditText
+	Private fondo As ImageView
+
+	
+	Private Patente As Label
+	Private pagar As Label
+	Private Minutos As Label
+	Private Salida As Label
+	Private Entrada As Label
+	Private Fecha As Label
+	Private EditText5 As EditText
+	Private Spinner1 As Spinner
+	Private imagen As ImageView
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("panta1")
+	imagen.Bitmap=LoadBitmap(File.DirAssets,"auto.jpg")
+
+
+End Sub
+
+
+
+Sub Button1_Click
+	Dim h, m As Int
+	h =DateTime.GetHour(DateTime.Now)
+	m = DateTime.GetMinute(DateTime.Now)
+	car(cont).Initialize
+	car(cont).hllegada=h
+	car(cont).mllegada=m
+	car(cont).Patente=EditText5.Text
+	car(cont).fechallegada=DateTime.Date(DateTime.now)
+	Spinner1.Add(car(cont).Patente)
+	cont=cont+1
+
+End Sub
+
+Sub Spinner1_ItemClick (Position As Int, Value As Object)
+	Dim h, m, s As Int
+	h =DateTime.GetHour(DateTime.Now)
+	m = DateTime.GetMinute(DateTime.Now)
+	s = DateTime.GetSecond(DateTime.Now)
+
+ 
+	Activity.LoadLayout("resultados")
+	fondo.Bitmap=LoadBitmap(File.DirAssets,"white.jpeg")
+	Patente.Text=car(Position).Patente
+	Entrada.Text=car(Position).hllegada&":"&car(Position).mllegada
+	Salida.Text=h&":"&m
+	Fecha.Text=car(Position).fechallegada
+	Dim Mins As Int=(h-car(Position).hllegada)*60+(m-car(Position).mllegada)
+	Minutos.Text=Mins&"Minutos y "&s&" Segundos"
+	If Mins>30 Then
+		pagar.Text=((Mins-30)*35+500)&"$"
+	Else
+		pagar.Text=500&"$"
+	End If
+	
+End Sub
+
+Sub Bott_Click
+	Activity.RemoveAllViews
+	Activity.LoadLayout("panta1")
+	For i=0 To cont-1
+		Spinner1.Add(car(i).Patente)
+	Next
+End Sub
