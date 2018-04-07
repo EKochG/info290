@@ -1,0 +1,119 @@
+﻿Version=5.8
+NumberOfModules=1
+Module1=Starter
+Build1=Default,b4a.example
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
+IconFile=
+NumberOfFiles=19
+File1=arma1.jpg
+File2=arma2.jpg
+File3=arma3.jpg
+File4=arma4.jpg
+File5=arma5.jpg
+File6=arma6.jpg
+File7=c1.jpg
+File8=c2.jpg
+File9=c3.jpg
+File10=c4.jpg
+File11=c5.jpg
+File12=c6.jpg
+File13=h1.jpg
+File14=h2.jpg
+File15=h3.jpg
+File16=h4.jpg
+File17=h5.jpg
+File18=h6.jpg
+File19=vent1.bal
+NumberOfLibraries=1
+Library1=core
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: B4A Example
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Type imagenes(Img1 As String,Img2 As String, Img3 As String,Img4 As String, img5 As String,img6 As String)
+	Dim listaimg(3) As imagenes
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	Private ImageView1 As ImageView
+	Private ImageView2 As ImageView
+	Private ImageView3 As ImageView
+	Private ImageView4 As ImageView
+	Private ImageView5 As ImageView
+	Private ImageView6 As ImageView
+	listaimg(0).Img1="arma1.jpg"
+	listaimg(0).Img2="arma2.jpg"
+	listaimg(0).Img3="arma3.jpg"
+	listaimg(0).Img4="arma4.jpg"
+	listaimg(0).Img5="arma5.jpg"
+	listaimg(0).Img6="arma6.jpg"
+	listaimg(1).Img1="c1.jpg"
+	listaimg(1).Img2="c2.jpg"
+	listaimg(1).Img3="c3.jpg"
+	listaimg(1).Img4="c4.jpg"
+	listaimg(1).Img5="c5.jpg"
+	listaimg(1).Img6="c6.jpg"
+	listaimg(2).Img1="h1.jpg"
+	listaimg(2).Img2="h2.jpg"
+	listaimg(2).Img3="h3.jpg"
+	listaimg(2).Img4="h4.jpg"
+	listaimg(2).Img5="h5.jpg"
+	listaimg(2).Img6="h6.jpg"
+	Private ListView1 As ListView
+	Private Spinner1 As Spinner
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("vent1")
+	ListView1.AddSingleLine("Armas")
+	ListView1.AddSingleLine("Ciudades")
+	ListView1.AddSingleLine("Helados")
+	Spinner1.Add("Armas")
+	Spinner1.Add("Ciudades")
+	Spinner1.Add("Helados")
+
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+
+Sub ListView1_ItemClick (Position As Int, Value As Object)
+	ImageView1.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img1)
+	ImageView2.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img2)
+	ImageView3.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img3)
+	ImageView4.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img4)
+	ImageView5.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img5)
+	ImageView6.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img6)
+End Sub
+
+Sub Spinner1_ItemClick (Position As Int, Value As Object)
+	ImageView1.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img1)
+	ImageView2.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img2)
+	ImageView3.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img3)
+	ImageView4.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img4)
+	ImageView5.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img5)
+	ImageView6.Bitmap=LoadBitmap(File.DirAssets,listaimg(Position).Img6)
+End Sub
